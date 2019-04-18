@@ -18,6 +18,7 @@ import TopTrack from './components/toptracks.component.vue';
 Vue.use(vueRouter);
 Vue.use(vueResource);
 
+
 const router = new vueRouter({
 	mode: 'history',
 	base: __dirname,
@@ -39,6 +40,6 @@ const router = new vueRouter({
 
 new Vue({
   el: '#app',
-	router,
+  router,
   render: h => h(App)
 })

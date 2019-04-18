@@ -1,5 +1,5 @@
 <template>
-	<div id="app" >
+	<div id="app">
 		<spotify-header/>
 
 		<div class="main">
@@ -21,8 +21,14 @@ export default {
   },
   data () {
     return {
-
+      token: ''
     }
+  },
+  created() {
+    this.$http.get('http://slimapp:8181/token').then(response => {
+      // get body data
+      Vue.http.headers.common['Authorization'] = `Bearer ${response.body.token}`;
+    });
   }
 }
 

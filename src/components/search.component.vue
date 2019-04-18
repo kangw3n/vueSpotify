@@ -12,14 +12,14 @@
 			</div>
 
 			<select @change="changeType">
-				<option v-for="i of types">{{i}}</option>
+				<option v-for="i of types" :key="i">{{i}}</option>
 			</select>
 
 		</form>
 
 
 		<div v-if="songs.length !== 0">
-			<div v-for="res of songs">
+			<div v-for="(res, i) of songs" :key="i">
 				<div class="row">
 					<div class="col-md-12">
 						<div class="search-res well">
@@ -58,6 +58,8 @@
 
 
 	</div>
+
+
 </template>
 
 
